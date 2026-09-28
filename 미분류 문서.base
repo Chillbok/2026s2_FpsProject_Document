@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("미분류 문서"))
