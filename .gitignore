@@ -1,0 +1,18 @@
+# OS 부산물
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian 로컬 휴지통
+.trash/
+
+# 머신 종속 상태 (복원 불필요, diff 노이즈)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# git 플러그인 인증 부산물 / 설정
+.obsidian/plugins/obsidian-git/obsidian_askpass.sh
+.obsidian/plugins/obsidian-git/data.json
+
+# livesync 자격증명·기기상태 (QR로 재설정)
+.obsidian/plugins/obsidian-livesync/data.json

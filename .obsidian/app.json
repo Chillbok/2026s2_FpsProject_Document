@@ -1,0 +1,16 @@
+{
+  "showLineNumber": true,
+  "tabSize": 2,
+  "attachmentFolderPath": "Assets",
+  "showUnsupportedFiles": false,
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "deleteUnlinkedAttachments": "always",
+  "openBehavior": "file:",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}

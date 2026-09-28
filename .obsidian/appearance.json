@@ -1,0 +1,9 @@
+{
+  "theme": "system",
+  "accentColor": "",
+  "translucency": false,
+  "cssTheme": "Cupertino",
+  "enabledCssSnippets": [
+    "print-mermaid"
+  ]
+}
