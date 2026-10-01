@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("기획서 분류들"))

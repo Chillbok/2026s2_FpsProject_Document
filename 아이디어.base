@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("아이디어"))

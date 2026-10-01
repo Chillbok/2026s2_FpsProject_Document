@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("암살 시스템 초기 기획"))

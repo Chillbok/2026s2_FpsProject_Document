@@ -4,3 +4,5 @@ views:
     filters:
       and:
         - categories.contains(link("미분류 문서"))
+        - file.folder != "templates"
+        - file.name != link("미분류 문서")

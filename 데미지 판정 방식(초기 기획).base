@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("데미지 판정 방식(초기 기획)"))
+    groupBy:
+      property: date
+      direction: DESC
+    sort:
+      - property: date
+        direction: DESC

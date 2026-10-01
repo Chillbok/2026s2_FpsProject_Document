@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("플레이어 스테이터스(초기 기획)"))
