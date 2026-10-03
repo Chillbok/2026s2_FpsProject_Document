@@ -4,3 +4,6 @@ views:
     filters:
       and:
         - categories.contains(link("문서 생성 안내"))
+    sort:
+      - property: file.name
+        direction: ASC
