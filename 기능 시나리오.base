@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 뷰
+    filters:
+      and:
+        - categories.contains(link("기능 시나리오"))

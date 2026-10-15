@@ -2,7 +2,8 @@
   "obsidian-git",
   "heading-decorator",
   "homepage",
-  "open-in-new-tab",
   "obsidian-outliner",
-  "obsidian-livesync"
+  "obsidian-livesync",
+  "tasknotes",
+  "tag-wrangler"
 ]

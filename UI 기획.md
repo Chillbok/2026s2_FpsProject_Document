@@ -1,0 +1,8 @@
+---
+aliases:
+categories:
+  - "[[문서 분류]]"
+tags:
+  - 데이터베이스
+---
+![[UI 기획.base]]

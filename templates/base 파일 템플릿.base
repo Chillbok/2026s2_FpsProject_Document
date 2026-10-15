@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: 뷰
+    groupBy:
+      property: tags
+      direction: ASC
+    order:
+      - file.name
+      - date
+    sort:
+      - property: date
+        direction: DESC
+    columnSize:
+      file.name: 398

@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: 뷰
+    filters:
+      and:
+        - categories.contains(link("작업 수칙"))
