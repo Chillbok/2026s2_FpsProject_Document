@@ -71,3 +71,7 @@ views:
     enableSearch: true
     hideEmptySwimLanes: false
     cardLayout: default
+    expandedRelationshipFilterMode: show-all
+    consolidateStatusIcon: false
+    hideEmptyColumns: false
+    maxSwimlaneHeight: 600

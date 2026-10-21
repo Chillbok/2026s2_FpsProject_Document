@@ -1,7 +1,7 @@
 {
   "theme": "system",
   "accentColor": "",
-  "translucency": false,
+  "translucency": true,
   "cssTheme": "Cupertino",
   "enabledCssSnippets": [
     "print-mermaid"

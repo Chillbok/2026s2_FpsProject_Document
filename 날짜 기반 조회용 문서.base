@@ -1,15 +1,17 @@
 filters:
   and:
     - file.ext == "md"
-    - file.folder != "templates"
-    - file.folder != "assets"
-    - file.tags.contains("notes")
 views:
   - type: table
     name: 뷰
+    groupBy:
+      property: tags
+      direction: DESC
+    groupOrder:
+      - - "#데이터베이스"
+      - - "#문서"
     order:
       - file.name
-      - tags
       - 작성 날짜
     sort:
       - property: 작성 날짜

@@ -1,8 +1,11 @@
 views:
   - type: table
     name: 뷰
+    filters:
+      and:
+        - file.tags.containsAny("문서", "데이터베이스")
     groupBy:
-      property: tags
+      property: file.tags
       direction: ASC
     order:
       - file.name

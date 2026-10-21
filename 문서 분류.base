@@ -4,3 +4,9 @@ views:
     filters:
       and:
         - categories.contains(link("문서 분류"))
+        - file.tags.containsAny("문서", "데이터베이스")
+    groupBy:
+      property: file.tags
+      direction: ASC
+    order:
+      - file.name
