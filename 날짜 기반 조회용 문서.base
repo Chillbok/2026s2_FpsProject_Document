@@ -2,7 +2,7 @@ filters:
   and:
     - file.ext == "md"
 views:
-  - type: table
+  - type: cards
     name: 뷰
     groupBy:
       property: tags
@@ -16,3 +16,5 @@ views:
     sort:
       - property: 작성 날짜
         direction: DESC
+    limit: 10
+    indentProperties: true
