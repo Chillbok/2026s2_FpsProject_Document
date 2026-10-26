@@ -1,0 +1,77 @@
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # v5 브랜치 tip. 플러그인이 npm 의존성으로 들어있어 `npm ci`만으로 빌드된다.
+  # v5.0.0 태그는 플러그인을 git에서 받아와야 해서 CI에서 쓰지 않는다.
+  QUARTZ_REF: 97a2d05f80c4c50534959b1d0d41cc4b3895625e
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Quartz
+        run: |
+          git clone --filter=blob:none --no-checkout https://github.com/jackyzha0/quartz.git "$RUNNER_TEMP/quartz"
+          cd "$RUNNER_TEMP/quartz"
+          git checkout --detach "$QUARTZ_REF"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ${{ runner.temp }}/quartz/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ runner.temp }}/quartz
+        run: npm ci
+
+      # `quartz create`는 테마(@quartz-themes/default)를 의존성으로 확정해 준다.
+      # 이 단계 없이 바로 build하면 테마 로드에 실패한다.
+      - name: Initialize Quartz
+        working-directory: ${{ runner.temp }}/quartz
+        run: npx quartz create -t obsidian -X new -b "chillbok.github.io/2026s2_FpsProject_Document" -l shortest
+
+      - name: Prepare site config and content
+        run: |
+          cp .publish/quartz.config.yaml "$RUNNER_TEMP/quartz/quartz.config.yaml"
+          bash .publish/prepare.sh "$GITHUB_WORKSPACE" "$RUNNER_TEMP/quartz/content"
+
+      - name: Build
+        working-directory: ${{ runner.temp }}/quartz
+        run: npx quartz build
+
+      - name: Add noindex
+        run: |
+          find "$RUNNER_TEMP/quartz/public" -name '*.html' -print0 \
+            | xargs -0 sed -i 's#</head>#<meta name="robots" content="noindex"></head>#'
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/quartz/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
