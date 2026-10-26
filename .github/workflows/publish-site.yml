@@ -37,13 +37,10 @@ jobs:
 
       - name: Install dependencies
         working-directory: ${{ runner.temp }}/quartz
-        run: npm ci
-
-      # `quartz create`는 테마(@quartz-themes/default)를 의존성으로 확정해 준다.
-      # 이 단계 없이 바로 build하면 테마 로드에 실패한다.
-      - name: Initialize Quartz
-        working-directory: ${{ runner.temp }}/quartz
-        run: npx quartz create -t obsidian -X new -b "chillbok.github.io/2026s2_FpsProject_Document" -l shortest
+        run: |
+          npm ci
+          # 테마 패키지가 최상위 의존성으로 없으면 빌드 시 @quartz-themes/default 로드에 실패한다.
+          npm install --no-audit --no-fund @quartz-themes/default@^1.0.1
 
       - name: Prepare site config and content
         run: |
