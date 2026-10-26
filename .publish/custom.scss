@@ -1,0 +1,19 @@
+// Quartz 커스텀 스타일.
+//
+// mermaid가 CSS 변수를 파싱하지 못해 다이어그램이 코드블록으로 남는 문제를 회피한다.
+// Obsidian 호환 테마(@quartz-themes/default)가 파생 색을 hsl(calc(...), ...) 형태로
+// 정의하는데, mermaid 11.4.0의 색 파서(khroma)는 calc()를 지원하지 않는다.
+//
+// 그래서 mermaid가 읽어가는 변수의 근원인 --color-accent-1/2를
+// 미리 계산한 정적 hsl 값으로 덮어쓴다. 값은 테마 원본과 동일한 색이다.
+//   accent-1: hsl(258 - 3, 88% * 1.02, 66% * 1.15)
+//   accent-2: hsl(258 - 5, 88% * 1.05, 66% * 1.29)
+//
+// 선택자에 html을 붙이는 이유: 테마 CSS가 :root[saved-theme=dark](명시도 0,2,0)로
+// 정의하므로 html:root[...](0,2,1)로 올려야 로드 순서와 무관하게 적용된다.
+html:root,
+html:root[saved-theme="light"],
+html:root[saved-theme="dark"] {
+  --color-accent-1: hsl(255, 89.76%, 75.9%);
+  --color-accent-2: hsl(253, 92.4%, 85.14%);
+}

@@ -11,7 +11,17 @@
 | 파일 | 역할 |
 |---|---|
 | `quartz.config.yaml` | 사이트 제목·언어(ko-KR)·baseUrl·플러그인 설정 |
+| `custom.scss` | 커스텀 CSS (mermaid 색상 파싱 문제 우회) |
 | `prepare.sh` | 볼트 → Quartz `content/` 복사, 홈페이지(`index.md`) 생성 |
+
+## Mermaid가 코드블록으로 보일 때
+
+증상: 다이어그램 자리에 ```mermaid 코드가 그대로 보인다.
+브라우저 콘솔에 `Unsupported color format: "hsl(calc(...), ...)"`가 찍힌다면
+테마가 `calc()` 기반 색을 만들고 mermaid의 색 파서가 이를 이해하지 못한 것이다.
+
+`custom.scss`가 `--color-accent-1/2`를 미리 계산한 정적 hsl 값으로 덮어써서 회피한다.
+테마를 바꾸거나 `@quartz-themes/*`를 업데이트했다면 이 값도 다시 맞춰야 한다.
 
 ## 사이트에서 제외되는 것
 

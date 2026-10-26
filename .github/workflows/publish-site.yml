@@ -45,6 +45,7 @@ jobs:
       - name: Prepare site config and content
         run: |
           cp .publish/quartz.config.yaml "$RUNNER_TEMP/quartz/quartz.config.yaml"
+          cp .publish/custom.scss "$RUNNER_TEMP/quartz/quartz/styles/custom.scss"
           bash .publish/prepare.sh "$GITHUB_WORKSPACE" "$RUNNER_TEMP/quartz/content"
 
       - name: Build
