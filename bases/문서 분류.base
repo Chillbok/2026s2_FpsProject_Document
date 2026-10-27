@@ -1,5 +1,5 @@
 views:
-  - type: table
+  - type: list
     name: 표
     filters:
       and:

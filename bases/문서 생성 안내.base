@@ -1,18 +1,18 @@
+filters:
+  and:
+    - categories.contains(link("문서 생성 안내"))
 views:
-  - type: table
+  - type: list
     name: 표
-    filters:
-      and:
-        - categories.contains(link("문서 생성 안내"))
-        - note["노트 타입"].toString().containsAny("기본 문서", "데이터베이스")
     groupBy:
       property: 노트 타입
       direction: ASC
     order:
       - file.name
-      - date
+      - 작성 날짜
     sort:
       - property: file.name
         direction: ASC
     columnSize:
       file.name: 287
+    indentProperties: true
