@@ -13,7 +13,6 @@ configuration:
     - private
     - templates
     - .obsidian
-    - TaskNotes
     - bases/배포 스킬 설치 가이드.base
   theme:
     fontOrigin: googleFonts

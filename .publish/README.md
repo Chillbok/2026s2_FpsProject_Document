@@ -36,8 +36,8 @@
 
 ## 홈페이지
 
-볼트의 `Home.md`는 사이트 루트(`/`)에서 열리도록 `index.md`로 변환됩니다
-(`title: 홈`, `aliases: [Home]` 자동 추가). 원본 `Home.md`는 그대로 둡니다.
+볼트의 `notes/Home.md`는 사이트 루트(`/`)에서 열리도록 `index.md`로 변환됩니다
+(`title: 홈`, `aliases: [Home]` 자동 추가). 원본 `notes/Home.md`는 그대로 둡니다.
 
 ## 검색엔진 노출
 

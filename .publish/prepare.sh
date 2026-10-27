@@ -29,7 +29,7 @@ import re
 import sys
 
 dest = pathlib.Path(sys.argv[1])
-home = dest / "Home.md"
+home = dest / "notes" / "Home.md"
 if not home.exists():
     sys.exit(0)
 
