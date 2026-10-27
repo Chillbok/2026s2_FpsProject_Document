@@ -8,8 +8,7 @@ aliases:
 categories:
   - "[[UI 기획]]"
   - "[[외부 자료]]"
-tags:
-  - 문서
+노트 타입: "[[기획 문서]]"
 ---
 > [상호작용 UI 문서 링크: '상호작용 UI' 파트 참조](https://docs.google.com/presentation/d/14IPxTEH3QcNaLU97-LIk2LBnaRHWOCFATN5TyMco804/edit?usp=sharing)
 

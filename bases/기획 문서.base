@@ -1,0 +1,16 @@
+filters:
+  and:
+    - note["노트 타입"] == link("기획 문서")
+views:
+  - type: list
+    name: 뷰
+    groupBy:
+      property: 노트 타입
+      direction: ASC
+    order:
+      - file.name
+      - 작성 날짜
+    sort:
+      - property: date
+        direction: DESC
+    indentProperties: true

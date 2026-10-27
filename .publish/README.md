@@ -30,7 +30,7 @@
 - `.git/`, `.github/`, `.obsidian/`, `.publish/`
 - `templates/` — `{{title}}` 플레이스홀더가 깨진 임베드로 노출됨
 - `TaskNotes/` — TaskNotes 전용 뷰(`tasknotesKanban` 등)와 formula는 Quartz가 렌더하지 못함
-- `배포 스킬 설치 가이드.base` — 필터가 없어 전체 문서를 나열함
+- `bases/배포 스킬 설치 가이드.base` — 필터가 없어 전체 문서를 나열함
 
 제외를 바꾸려면 `prepare.sh`의 `--exclude` 줄을 수정합니다.
 

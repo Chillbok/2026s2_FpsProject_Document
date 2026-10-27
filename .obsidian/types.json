@@ -10,6 +10,7 @@
     "department": "multitext",
     "작성 날짜": "datetime",
     "카테고리": "multitext",
-    "작성자": "multitext"
+    "작성자": "multitext",
+    "노트 타입": "text"
   }
 }

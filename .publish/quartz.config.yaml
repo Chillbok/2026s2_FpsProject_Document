@@ -14,7 +14,7 @@ configuration:
     - templates
     - .obsidian
     - TaskNotes
-    - 배포 스킬 설치 가이드.base
+    - bases/배포 스킬 설치 가이드.base
   theme:
     fontOrigin: googleFonts
     cdnCaching: true

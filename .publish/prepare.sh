@@ -18,7 +18,7 @@ rsync -a --delete \
   --exclude '.publish/' \
   --exclude 'templates/' \
   --exclude 'TaskNotes/' \
-  --exclude '배포 스킬 설치 가이드.base' \
+  --exclude 'bases/배포 스킬 설치 가이드.base' \
   --exclude '.DS_Store' \
   "$VAULT"/ "$DEST"/
 

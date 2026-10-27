@@ -5,5 +5,5 @@ views:
       and:
         - categories.contains(link("시스템 초기 기획"))
     groupBy:
-      property: tags
+      property: 노트 타입
       direction: ASC

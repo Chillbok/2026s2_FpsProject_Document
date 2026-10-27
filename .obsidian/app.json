@@ -2,7 +2,7 @@
   "showLineNumber": true,
   "tabSize": 2,
   "attachmentFolderPath": "Assets",
-  "showUnsupportedFiles": false,
+  "showUnsupportedFiles": true,
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "deleteUnlinkedAttachments": "always",

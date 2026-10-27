@@ -5,11 +5,8 @@ views:
   - type: cards
     name: 뷰
     groupBy:
-      property: tags
+      property: 노트 타입
       direction: DESC
-    groupOrder:
-      - - "#데이터베이스"
-      - - "#문서"
     order:
       - file.name
       - 작성 날짜

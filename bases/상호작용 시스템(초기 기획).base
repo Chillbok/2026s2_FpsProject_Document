@@ -1,0 +1,33 @@
+filters:
+  and:
+    - categories.contains(link("상호작용 시스템(초기 기획)"))
+views:
+  - type: list
+    name: 뷰
+    groupBy:
+      property: 노트 타입
+      direction: ASC
+    order:
+      - file.name
+      - date
+      - 작성 날짜
+    sort:
+      - property: date
+        direction: DESC
+    indentProperties: true
+  - type: table
+    name: 표
+    filters:
+      and:
+        - categories.contains(link("상호작용 시스템(초기 기획)"))
+    groupBy:
+      property: 노트 타입
+      direction: ASC
+    order:
+      - file.name
+      - 작성 날짜
+    sort:
+      - property: 작성 날짜
+        direction: DESC
+    columnSize:
+      file.name: 416

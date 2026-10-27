@@ -4,9 +4,9 @@ views:
     filters:
       and:
         - categories.contains(link("문서 분류"))
-        - file.tags.containsAny("문서", "데이터베이스")
+        - note["노트 타입"].toString().containsAny("기본 문서", "데이터베이스")
     groupBy:
-      property: file.tags
+      property: 노트 타입
       direction: ASC
     order:
       - file.name
