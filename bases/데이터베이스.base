@@ -1,0 +1,7 @@
+filters:
+  and:
+    - note["노트 타입"].contains(link("데이터베이스"))
+views:
+  - type: list
+    name: 뷰
+    indentProperties: true

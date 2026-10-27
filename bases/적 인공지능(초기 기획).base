@@ -1,6 +1,10 @@
 views:
-  - type: table
+  - type: list
     name: 표
     filters:
       and:
         - categories.contains(link("적 인공지능(초기 기획)"))
+    groupBy:
+      property: 노트 타입
+      direction: ASC
+    indentProperties: true

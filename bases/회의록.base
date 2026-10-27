@@ -3,4 +3,7 @@ views:
     name: 표
     filters:
       and:
-        - categories.contains(link("회의록"))
+        - note["노트 타입"] == link("회의록")
+    sort:
+      - property: 작성 날짜
+        direction: DESC
