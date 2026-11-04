@@ -3,4 +3,4 @@ views:
     name: 뷰
     filters:
       and:
-        - categories.contains(link("기능 시나리오"))
+        - categories.contains(link("사용자 시나리오"))

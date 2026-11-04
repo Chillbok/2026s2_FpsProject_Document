@@ -1,0 +1,18 @@
+filters:
+  and:
+    - categories.contains(link("무기"))
+views:
+  - type: list
+    name: 전체 무기 기획 문서들
+    filters:
+      and:
+        - categories.contains(link("프로토타입 기획"))
+    order:
+      - file.name
+      - 작성 날짜
+    indentProperties: false
+  - type: list
+    name: 프로토타입 무기 기획
+    order:
+      - file.name
+      - 작성 날짜

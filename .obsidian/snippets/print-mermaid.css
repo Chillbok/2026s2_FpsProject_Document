@@ -9,3 +9,60 @@
   overflow: visible !important;
   text-align: center;
 }
+
+/* Mindmap colors follow the active Obsidian theme. */
+.mermaid {
+  --mm-surface: var(--background-secondary);
+  --mm-surface-alt: var(--background-primary-alt, var(--background-secondary));
+  --mm-border: var(--background-modifier-border);
+  --mm-line: var(--text-faint);
+  --mm-text: var(--text-normal);
+  --mm-accent: var(--interactive-accent);
+  --mm-on-accent: var(--text-on-accent, var(--text-normal));
+}
+
+/* Prevent Obsidian's dark-mode inversion from undoing these theme colors. */
+.theme-dark .mermaid > svg.mindmapDiagram,
+.theme-dark .mermaid > svg:has(.mindmap-node) {
+  filter: none !important;
+}
+
+.mermaid svg .mindmap-node.section--1 :is(rect, circle, ellipse, polygon, path) {
+  fill: var(--mm-accent) !important;
+  stroke: var(--mm-border) !important;
+}
+
+.mermaid svg .mindmap-node.section-0 :is(rect, circle, ellipse, polygon, path),
+.mermaid svg .mindmap-node.section-2 :is(rect, circle, ellipse, polygon, path),
+.mermaid svg .mindmap-node.section-3 :is(rect, circle, ellipse, polygon, path),
+.mermaid svg .mindmap-node.section-4 :is(rect, circle, ellipse, polygon, path),
+.mermaid svg .mindmap-node.section-5 :is(rect, circle, ellipse, polygon, path),
+.mermaid svg .mindmap-node.section-6 :is(rect, circle, ellipse, polygon, path) {
+  fill: var(--mm-surface) !important;
+  stroke: var(--mm-border) !important;
+}
+
+.mermaid svg .mindmap-node.section-1 :is(rect, circle, ellipse, polygon, path) {
+  fill: var(--mm-surface-alt) !important;
+  stroke: var(--mm-border) !important;
+}
+
+/* Mindmap labels: improve size, weight, and theme-aware contrast. */
+.mermaid svg .mindmap-node text,
+.mermaid svg .mindmap-node span,
+.mermaid svg .mindmap-node-label {
+  fill: var(--mm-text) !important;
+  color: var(--mm-text) !important;
+  font-size: 1.2em !important;
+  font-weight: 600 !important;
+}
+
+.mermaid svg .mindmap-node.section--1 text,
+.mermaid svg .mindmap-node.section--1 span {
+  fill: var(--mm-on-accent) !important;
+  color: var(--mm-on-accent) !important;
+}
+
+.mermaid svg .mindmap-node-line {
+  stroke: var(--mm-line) !important;
+}

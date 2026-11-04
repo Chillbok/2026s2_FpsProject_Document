@@ -7,4 +7,10 @@ views:
     groupBy:
       property: 노트 타입
       direction: ASC
+    order:
+      - file.name
+      - 작성 날짜
+    sort:
+      - property: 작성 날짜
+        direction: DESC
     indentProperties: true
