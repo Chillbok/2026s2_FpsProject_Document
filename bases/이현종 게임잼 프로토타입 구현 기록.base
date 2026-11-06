@@ -1,0 +1,15 @@
+filters:
+  and:
+    - categories.contains(link("이현종 게임잼 프로토타입 구현 기록"))
+views:
+  - type: list
+    name: 뷰
+    groupBy:
+      property: 카테고리
+      direction: ASC
+    order:
+      - file.name
+      - 작성 날짜
+    sort:
+      - property: 작성 날짜
+        direction: DESC

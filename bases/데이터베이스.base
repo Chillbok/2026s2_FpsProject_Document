@@ -4,4 +4,7 @@ filters:
 views:
   - type: list
     name: 뷰
+    order:
+      - file.name
+      - 작성 날짜
     indentProperties: true

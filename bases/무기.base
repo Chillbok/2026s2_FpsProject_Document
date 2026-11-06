@@ -3,7 +3,7 @@ filters:
     - categories.contains(link("무기"))
 views:
   - type: list
-    name: 전체 무기 기획 문서들
+    name: 전체 무기 기획
     filters:
       and:
         - categories.contains(link("프로토타입 기획"))
