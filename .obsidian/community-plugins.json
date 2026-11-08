@@ -1,8 +1,9 @@
 [
-  "obsidian-git",
-  "heading-decorator",
-  "homepage",
-  "obsidian-outliner",
   "obsidian-livesync",
-  "tag-wrangler"
+  "tag-wrangler",
+  "obsidian-outliner",
+  "open-in-new-tab",
+  "homepage",
+  "heading-decorator",
+  "obsidian-git"
 ]
