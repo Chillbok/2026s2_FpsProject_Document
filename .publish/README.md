@@ -11,6 +11,7 @@
 | 파일 | 역할 |
 |---|---|
 | `quartz.config.yaml` | 사이트 제목·언어(ko-KR)·baseUrl·플러그인 설정 |
+| `quartz.ts` | Quartz 설정에 Obsidian 인라인 각주 transformer 등록 |
 | `custom.scss` | 커스텀 CSS (mermaid 색상 파싱 문제 우회) |
 | `prepare.sh` | 볼트 → Quartz `content/` 복사, 홈페이지(`index.md`) 생성 |
 
@@ -53,11 +54,16 @@
 
 ## 로컬 미리보기
 
+CI와 동일한 Quartz 커밋을 사용해 미리 볼 수 있습니다.
+
 ```bash
-git clone --depth 1 --branch v5 https://github.com/jackyzha0/quartz.git /tmp/quartz
+git clone --filter=blob:none --no-checkout https://github.com/jackyzha0/quartz.git /tmp/quartz
+git -C /tmp/quartz checkout --detach 97a2d05f80c4c50534959b1d0d41cc4b3895625e
 cd /tmp/quartz && npm ci
-npx quartz create -t obsidian -X new -b "chillbok.github.io/2026s2_FpsProject_Document" -l shortest
-cp <볼트>/.publish/quartz.config.yaml quartz.config.yaml
+cd /tmp/quartz && npm install --no-audit --no-fund @quartz-themes/default@^1.0.1 remark-inline-footnote@1.0.5
+cp <볼트>/.publish/quartz.ts /tmp/quartz/quartz.ts
+cp <볼트>/.publish/quartz.config.yaml /tmp/quartz/quartz.config.yaml
+cp <볼트>/.publish/custom.scss /tmp/quartz/quartz/styles/custom.scss
 bash <볼트>/.publish/prepare.sh <볼트> content
 npx quartz build --serve
 ```

@@ -39,12 +39,13 @@ jobs:
         working-directory: ${{ runner.temp }}/quartz
         run: |
           npm ci
-          # 테마 패키지가 최상위 의존성으로 없으면 빌드 시 @quartz-themes/default 로드에 실패한다.
-          npm install --no-audit --no-fund @quartz-themes/default@^1.0.1
+          # Quartz config에서 직접 불러오는 테마 및 remark 플러그인 패키지를 설치한다.
+          npm install --no-audit --no-fund @quartz-themes/default@^1.0.1 remark-inline-footnote@1.0.5
 
       - name: Prepare site config and content
         run: |
           cp .publish/quartz.config.yaml "$RUNNER_TEMP/quartz/quartz.config.yaml"
+          cp .publish/quartz.ts "$RUNNER_TEMP/quartz/quartz.ts"
           cp .publish/custom.scss "$RUNNER_TEMP/quartz/quartz/styles/custom.scss"
           bash .publish/prepare.sh "$GITHUB_WORKSPACE" "$RUNNER_TEMP/quartz/content"
 
