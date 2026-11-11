@@ -5,7 +5,7 @@ views:
   - type: list
     name: 뷰
     groupBy:
-      property: 카테고리
+      property: 노트 타입
       direction: ASC
     order:
       - file.name
