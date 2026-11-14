@@ -1,1 +1,10 @@
-{"theme":"system","accentColor":"","translucency":true,"cssTheme":"Cupertino","enabledCssSnippets":["print-mermaid"],"showRibbon":true}
+{
+  "theme": "system",
+  "accentColor": "",
+  "translucency": true,
+  "cssTheme": "Cupertino",
+  "enabledCssSnippets": [
+    "print-mermaid"
+  ],
+  "showRibbon": true
+}
