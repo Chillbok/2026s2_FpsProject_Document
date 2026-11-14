@@ -1,0 +1,37 @@
+{
+  "kit_version": "0.1.0",
+  "source_commit": "344c3f77ec64cc482da46aefb33ba55963ef54a3",
+  "files": [
+    {
+      "destination": ".opencode/agents/design-review-consistency.md",
+      "sha256": "02ea6a5137430d83ebb1fe3c5edddf6c2bfc0a28b7f582d517c81469a2f11f58"
+    },
+    {
+      "destination": ".opencode/agents/design-review-evidence.md",
+      "sha256": "f3385bd17c5f1ac3d7dc20bc94fd5732e65e3d0801091b5b44cef90c3596c429"
+    },
+    {
+      "destination": ".opencode/commands/design-review.md",
+      "sha256": "64156071904d35ba7e2fb71386fa2c8524361022c5776bdeb1271d421bbdb7ff"
+    },
+    {
+      "destination": ".opencode/skills/design-review/SKILL.md",
+      "sha256": "0e0156c068af1a8c89c7f1f1cf7dc13d37a423395420a8ce6b5bc9c66aa307d1"
+    },
+    {
+      "destination": ".opencode/skills/design-review/references/checklist.md",
+      "sha256": "b192ee304429907a36207569c16e90734336022d0c4363bcfb5e9a2df5e3c922"
+    },
+    {
+      "destination": ".opencode/skills/design-review/references/modes.md",
+      "sha256": "04578a3c4bc431fc28f67abc2bf3ebe534f4ebb408673d53f287255b898e66da"
+    },
+    {
+      "destination": ".opencode/skills/design-review/references/review-output.md",
+      "sha256": "813a78fc66f33adc2753a7b89ec5927d015d7ba19d33190e9d95a6b34bd672a6"
+    }
+  ],
+  "user_owned": [
+    ".opencode/design-review/profile.md"
+  ]
+}
